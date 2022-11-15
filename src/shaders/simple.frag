@@ -10,9 +10,21 @@ precision mediump float;
 
 // The shader will be identical to the unlit shader in GopherGfx.
 
+uniform vec4 materialColor;
+uniform int useTexture;
+uniform sampler2D textureImage;
+
+in vec4 vertColor;
+in vec2 uv;
+
 out vec4 fragColor;
 
 void main()
 {
-    fragColor = vec4(0, 0, 1, 1);
+    fragColor = materialColor * vertColor;
+
+    if(useTexture != 0)
+    {
+        fragColor *= texture(textureImage, uv);
+    }
 }
