@@ -41,7 +41,7 @@ export class MeshViewer extends gfx.GfxApp
         this.renderStyle = 'Unlit';
         this.model = 'bunny.obj';
         this.texture = 'None';
-        this.lightType = 'Point Light';
+        this.lightType = 'Directional Light';
         
         this.models = [];
 
@@ -107,9 +107,8 @@ export class MeshViewer extends gfx.GfxApp
         lightControls.open();
 
         const lightController = lightControls.add(this, 'lightType', [
-            'Point Light',
             'Directional Light',
-            'Ambient Only'
+            'Point Light'
         ]);
         lightController.name('');
         lightController.onChange(()=>{this.changeLight()});
@@ -148,6 +147,7 @@ export class MeshViewer extends gfx.GfxApp
 
         // Set the initial material colors and texture
         this.changeTexture();
+        this.changeLight();
 
         this.models.push(gfx.ObjLoader.load('./assets/models/bunny.obj'));
         this.models.push(gfx.ObjLoader.load('./assets/models/cow.obj'));
