@@ -4,6 +4,9 @@
  * License: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
  */ 
 
+// All code for this lecture is in the shaders.
+// You do not need to go through the TypeScript code.
+
 import * as gfx from 'gophergfx'
 import { GUI } from 'dat.gui'
 

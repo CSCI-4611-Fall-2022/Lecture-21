@@ -5,6 +5,8 @@
  */ 
 
 // The is identical to the UnlitMaterial in GopherGfx.
+// All code for this lecture is in the shaders.
+// You do not need to go through the TypeScript code.
 
 // @ts-ignore
 import unlitVertexShader from './shaders/simple.vert'
